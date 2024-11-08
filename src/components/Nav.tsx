@@ -6,10 +6,10 @@ const Nav = () => {
 
   return (
     <header>
-      <nav>
-        <h1>
+      <nav style={{ textAlign: "start" }}>
+        {/* <h1>
           <Link to="/">Candidate Search</Link>
-        </h1>
+        </h1> */}
         <ul className="nav">
           <li className="nav-item">
             <h2>

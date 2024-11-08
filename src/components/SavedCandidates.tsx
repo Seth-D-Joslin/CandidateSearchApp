@@ -15,19 +15,35 @@ const SavedCandidates = () => {
 
   return (
     <>
-      <h1>Potential Candidates</h1>
       {savedCandidates.map((candidate) => (
-        <div key={candidate.id} className="candidate-card">
-          <img src={candidate.avatar_url} alt={`${candidate.name}'s avatar`} />
-          <h2>{candidate.name}</h2>
-          <h6>({candidate.login})</h6>
-          <p>Location: {candidate.location}</p>
+        <div
+          key={candidate.id}
+          style={{
+            borderBottom: "2px solid black",
+            margin: "20px",
+            textAlign: "center",
+          }}
+        >
+          <img
+            style={{ height: "200px", width: "200px" }}
+            src={candidate.avatar_url}
+            alt={`${candidate.name}'s avatar`}
+          />
+          {/* <h2>{candidate.name}</h2> */}
+          <h2>{candidate.login}</h2>
+          <button style={{ marginBottom: "20px" }}>
+            <a
+              href={candidate.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Profile
+            </a>
+          </button>
+          {/* <p>Location: {candidate.location}</p>
           <p>Email: {candidate.email}</p>
           <p>Company: {candidate.company}</p>
-          <article>Bio: {candidate.bio}</article>
-          <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
-            View Profile
-          </a>
+          <article>Bio: {candidate.bio}</article> */}
         </div>
       ))}
     </>
